@@ -1,0 +1,108 @@
+Using 23 industries from kospi_industry.csv
+
+============================================================
+BACKTEST CONFIGURATION
+============================================================
+Total periods: 1515
+Number of stocks: 100
+Number of features: 23
+Primary horizon: 5 days
+
+Data split:
+  Training:   periods 0-908 (909 days)
+  Validation: periods 909-1211 (303 days)
+  Testing:    periods 1212-1514 (303 days)
+============================================================
+
+
+========================================
+Training and evaluating: DMFM
+========================================
+  [dmfm] Epoch 10/30 | Val IC: 0.0264
+  [dmfm] Early stopping at epoch 14
+
+  Results for dmfm:
+    IC: 0.0204
+    ICIR: 0.1705
+    Sharpe: 1.6383
+    Total Return: 65.55%
+    Max Drawdown: -36.47%
+
+========================================
+Training and evaluating: MLP_GAT
+========================================
+  [mlp_gat] Epoch 10/30 | Val IC: 0.0081
+  [mlp_gat] Early stopping at epoch 14
+
+  Results for mlp_gat:
+    IC: 0.0195
+    ICIR: 0.1209
+    Sharpe: 4.4308
+    Total Return: 183.41%
+    Max Drawdown: -38.22%
+
+========================================
+Training and evaluating: MLP
+========================================
+  [mlp] Epoch 10/30 | Val IC: -0.0152
+  [mlp] Epoch 20/30 | Val IC: -0.0152
+  [mlp] Epoch 30/30 | Val IC: 0.0152
+
+  Results for mlp:
+    IC: 0.0184
+    ICIR: 0.1219
+    Sharpe: 0.3507
+    Total Return: 15.93%
+    Max Drawdown: -37.02%
+
+========================================
+Training and evaluating: LINEAR
+========================================
+  [linear] Epoch 10/30 | Val IC: -0.0152
+  [linear] Epoch 20/30 | Val IC: 0.0152
+  [linear] Epoch 30/30 | Val IC: -0.0152
+
+  Results for linear:
+    IC: 0.0184
+    ICIR: 0.1219
+    Sharpe: 0.3571
+    Total Return: 16.24%
+    Max Drawdown: -37.02%
+
+========================================
+Training and evaluating: MOMENTUM
+========================================
+
+  Results for momentum:
+    IC: -0.0141
+    ICIR: -0.0594
+    Sharpe: -1.2893
+    Total Return: -57.18%
+    Max Drawdown: -63.57%
+
+========================================
+Training and evaluating: REVERSAL
+========================================
+
+  Results for reversal:
+    IC: 0.0141
+    ICIR: 0.0594
+    Sharpe: 1.8464
+    Total Return: 92.44%
+    Max Drawdown: -26.10%
+
+================================================================================
+BACKTEST RESULTS SUMMARY
+================================================================================
+Model                 IC     ICIR   Sharpe     Return      MaxDD  WinRate
+--------------------------------------------------------------------------------
+mlp_gat           0.0195   0.1209   4.4308    183.41%    -38.22%    53.8%
+reversal          0.0141   0.0594   1.8464     92.44%    -26.10%    56.4%
+dmfm              0.0204   0.1705   1.6383     65.55%    -36.47%    53.1%
+linear            0.0184   0.1219   0.3571     16.24%    -37.02%    51.2%
+mlp               0.0184   0.1219   0.3507     15.93%    -37.02%    51.2%
+momentum         -0.0141  -0.0594  -1.2893    -57.18%    -63.57%    43.6%
+================================================================================
+
+Results saved to backtest_results
+

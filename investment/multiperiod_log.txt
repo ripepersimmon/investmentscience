@@ -1,0 +1,130 @@
+nohup: ignoring input
+Using 23 industries from kospi_industry.csv
+
+Total data: 1515 periods, 100 stocks, 23 features
+
+============================================================
+Period: Period 1 (Early)
+============================================================
+  Training:   0 - 605 (606 days)
+  Validation: 606 - 756 (151 days)
+  Testing:    757 - 1059 (303 days)
+
+  Training: dmfm...   [dmfm] Epoch 10/25 | Val IC: 0.0811
+  [dmfm] Early stopping at epoch 15
+IC=-0.0004, Sharpe=-0.03, Return=-1.3%
+
+  Training: mlp_gat...   [mlp_gat] Epoch 10/25 | Val IC: 0.0009
+  [mlp_gat] Epoch 20/25 | Val IC: -0.0371
+IC=-0.0180, Sharpe=-0.73, Return=-26.4%
+
+  Training: mlp...   [mlp] Epoch 10/25 | Val IC: 0.0159
+  [mlp] Early stopping at epoch 19
+IC=-0.0213, Sharpe=-1.17, Return=-48.4%
+
+  Training: linear...   [linear] Epoch 10/25 | Val IC: -0.0159
+  [linear] Early stopping at epoch 13
+IC=0.0213, Sharpe=1.43, Return=65.3%
+
+  Training: momentum... IC=-0.0041, Sharpe=0.25, Return=10.5%
+
+  Training: reversal... IC=0.0041, Sharpe=-0.53, Return=-21.6%
+
+============================================================
+Period: Period 2 (Middle)
+============================================================
+  Training:   303 - 787 (485 days)
+  Validation: 788 - 908 (121 days)
+  Testing:    909 - 1211 (303 days)
+
+  Training: dmfm...   [dmfm] Epoch 10/25 | Val IC: 0.0192
+  [dmfm] Early stopping at epoch 16
+IC=0.0483, Sharpe=9.79, Return=467.9%
+
+  Training: mlp_gat...   [mlp_gat] Epoch 10/25 | Val IC: -0.0361
+  [mlp_gat] Early stopping at epoch 11
+IC=0.0196, Sharpe=2.25, Return=109.2%
+
+  Training: mlp...   [mlp] Epoch 10/25 | Val IC: -0.0320
+  [mlp] Early stopping at epoch 14
+IC=-0.0154, Sharpe=-1.35, Return=-56.6%
+
+  Training: linear...   [linear] Epoch 10/25 | Val IC: 0.0320
+  [linear] Early stopping at epoch 11
+IC=0.0154, Sharpe=2.01, Return=95.0%
+
+  Training: momentum... IC=-0.0022, Sharpe=0.33, Return=14.4%
+
+  Training: reversal... IC=0.0022, Sharpe=-0.60, Return=-25.3%
+
+============================================================
+Period: Period 3 (Recent)
+============================================================
+  Training:   606 - 1090 (485 days)
+  Validation: 1091 - 1211 (121 days)
+  Testing:    1212 - 1514 (303 days)
+
+  Training: dmfm...   [dmfm] Epoch 10/25 | Val IC: 0.0547
+  [dmfm] Epoch 20/25 | Val IC: 0.0439
+  [dmfm] Early stopping at epoch 22
+IC=0.0217, Sharpe=-0.63, Return=-28.3%
+
+  Training: mlp_gat...   [mlp_gat] Epoch 10/25 | Val IC: 0.0108
+  [mlp_gat] Early stopping at epoch 12
+IC=0.0187, Sharpe=0.80, Return=36.5%
+
+  Training: mlp...   [mlp] Epoch 10/25 | Val IC: 0.0362
+  [mlp] Epoch 20/25 | Val IC: 0.0362
+IC=0.0184, Sharpe=0.35, Return=15.9%
+
+  Training: linear...   [linear] Epoch 10/25 | Val IC: 0.0362
+  [linear] Early stopping at epoch 12
+IC=0.0184, Sharpe=0.35, Return=16.0%
+
+  Training: momentum... IC=-0.0141, Sharpe=-1.29, Return=-57.2%
+
+  Training: reversal... IC=0.0141, Sharpe=1.85, Return=92.4%
+
+====================================================================================================
+MULTI-PERIOD ROBUSTNESS TEST SUMMARY
+====================================================================================================
+
+Model        |           Early           |          Middle           |          Recent           | {'Average':^25}
+----------------------------------------------------------------------------------------------------
+
+IC
+  dmfm       |      -0.00               |       0.05               |       0.02               |       0.02
+  mlp_gat    |      -0.02               |       0.02               |       0.02               |       0.01
+  mlp        |      -0.02               |      -0.02               |       0.02               |      -0.01
+  linear     |       0.02               |       0.02               |       0.02               |       0.02
+  momentum   |      -0.00               |      -0.00               |      -0.01               |      -0.01
+  reversal   |       0.00               |       0.00               |       0.01               |       0.01
+
+Sharpe
+  dmfm       |      -0.03               |       9.79               |      -0.63               |       3.04
+  mlp_gat    |      -0.73               |       2.25               |       0.80               |       0.77
+  mlp        |      -1.17               |      -1.35               |       0.35               |      -0.72
+  linear     |       1.43               |       2.01               |       0.35               |       1.26
+  momentum   |       0.25               |       0.33               |      -1.29               |      -0.24
+  reversal   |      -0.53               |      -0.60               |       1.85               |       0.24
+
+Return%
+  dmfm       |      -1.26               |     467.87               |     -28.33               |     146.09
+  mlp_gat    |     -26.35               |     109.19               |      36.50               |      39.78
+  mlp        |     -48.38               |     -56.64               |      15.93               |     -29.70
+  linear     |      65.25               |      95.05               |      15.99               |      58.76
+  momentum   |      10.47               |      14.43               |     -57.18               |     -10.76
+  reversal   |     -21.63               |     -25.30               |      92.44               |      15.17
+
+============================================================
+FINAL RANKING (by average Sharpe ratio)
+============================================================
+  1. dmfm         Sharpe=  3.04  IC=0.0232  Return= 146.1%
+  2. linear       Sharpe=  1.26  IC=0.0184  Return=  58.8%
+  3. mlp_gat      Sharpe=  0.77  IC=0.0068  Return=  39.8%
+  4. reversal     Sharpe=  0.24  IC=0.0068  Return=  15.2%
+  5. momentum     Sharpe= -0.24  IC=-0.0068  Return= -10.8%
+  6. mlp          Sharpe= -0.72  IC=-0.0061  Return= -29.7%
+
+Results saved to backtest_results/multiperiod_results.json
+

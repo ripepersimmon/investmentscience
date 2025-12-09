@@ -1,0 +1,19 @@
+Using device: cuda
+============================================================
+Loading Data
+============================================================
+  Time steps: 3000
+  Stocks: 934
+  Features: 21
+  Date range: 2013-08-20 to 2025-11-11
+  Feature columns: [np.str_('ret_1d'), np.str_('ret_5d'), np.str_('ret_10d'), np.str_('ret_20d'), np.str_('ret_60d'), np.str_('vol_5d'), np.str_('vol_10d'), np.str_('vol_20d'), np.str_('vol_60d'), np.str_('price_to_ma_5d'), np.str_('price_to_ma_10d'), np.str_('price_to_ma_20d'), np.str_('price_to_ma_60d'), np.str_('macd'), np.str_('rsi'), np.str_('volume_ratio_5d'), np.str_('volume_ratio_20d'), np.str_('atrp_14'), np.str_('hl_range'), np.str_('amihud'), np.str_('bb_pos_20d')]
+
+
+============================================================
+Period: EARLY
+============================================================
+  Training:   day    0 - 1199 (1200 days)
+  Validation: day 1200 - 1499 (300 days)
+  Testing:    day 1500 - 2099 (600 days)
+
+  Training: dmfm...
