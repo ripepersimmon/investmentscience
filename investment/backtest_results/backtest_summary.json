@@ -1,0 +1,70 @@
+{
+  "config": {
+    "train_ratio": 0.6,
+    "val_ratio": 0.2,
+    "test_ratio": 0.2,
+    "eval_horizon": 5,
+    "top_k": 10,
+    "bottom_k": 10,
+    "total_periods": 1515,
+    "num_stocks": 100,
+    "num_features": 23
+  },
+  "results": {
+    "dmfm": {
+      "test_ic": 0.02038117374693852,
+      "test_icir": 0.17053354143702892,
+      "sharpe_ratio": 1.6382963435330298,
+      "total_return": 0.6554932743659079,
+      "annual_return": 0.5208215256752562,
+      "max_drawdown": -0.36472054006610694,
+      "win_rate": 0.5313531353135313
+    },
+    "mlp_gat": {
+      "test_ic": 0.019534877458396722,
+      "test_icir": 0.12086188672473185,
+      "sharpe_ratio": 4.4308453598719835,
+      "total_return": 1.8341290951269253,
+      "annual_return": 1.378317273316612,
+      "max_drawdown": -0.38221649386285156,
+      "win_rate": 0.5379537953795379
+    },
+    "mlp": {
+      "test_ic": 0.018411495422955185,
+      "test_icir": 0.12193600599309261,
+      "sharpe_ratio": 0.35069184877697984,
+      "total_return": 0.15931335334805174,
+      "annual_return": 0.1308233214636223,
+      "max_drawdown": -0.37024496258383655,
+      "win_rate": 0.5115511551155115
+    },
+    "linear": {
+      "test_ic": 0.018411482020977442,
+      "test_icir": 0.1219359332783219,
+      "sharpe_ratio": 0.3571460526765155,
+      "total_return": 0.16241861442546646,
+      "annual_return": 0.13334188053864904,
+      "max_drawdown": -0.37024496258383655,
+      "win_rate": 0.5115511551155115
+    },
+    "momentum": {
+      "test_ic": -0.014097572887729755,
+      "test_icir": -0.059375817170983815,
+      "sharpe_ratio": -1.2892917673625341,
+      "total_return": -0.5717819763691767,
+      "annual_return": -0.5060739490755369,
+      "max_drawdown": -0.635741416900541,
+      "win_rate": 0.43564356435643564
+    },
+    "reversal": {
+      "test_ic": 0.014097572887729755,
+      "test_icir": 0.059375817170983815,
+      "sharpe_ratio": 1.8464473365169058,
+      "total_return": 0.9244243743380349,
+      "annual_return": 0.7236466149737102,
+      "max_drawdown": -0.2610489489844835,
+      "win_rate": 0.5643564356435643
+    }
+  },
+  "timestamp": "2025-12-06T11:21:44.870181"
+}
